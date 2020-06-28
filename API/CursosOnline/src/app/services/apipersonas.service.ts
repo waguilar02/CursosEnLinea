@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Response } from '../models/response';
 import { Personas } from '../models/personas';
 import { Cursos } from '../models/cursos';
-
+import { ConsultaSP } from '../models/ConsultaSP';
 
 
 const httpOption = {
@@ -21,6 +21,8 @@ const httpOption = {
   
    
     urlPersonas: string = 'https://localhost:44301/api/personas'; 
+    urlConsultas: string = 'https://localhost:44301/api/ConsultasSP'; 
+    
   
     constructor(
       private _http: HttpClient
@@ -45,7 +47,9 @@ const httpOption = {
       return this._http.put<Response>(this.urlPersonas, personas, httpOption)//
     }*/
     
- 
+    Get_SP(consulta: ConsultaSP): Observable<Response> {
+      return this._http.put<Response>(this.urlConsultas, consulta, httpOption)//
+    }
   
   }
   

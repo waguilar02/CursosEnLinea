@@ -1,5 +1,5 @@
 <p>personas-dialog works!</p>
-<h1 mat-dialog-tittle>Ingresar Nueva Persona</h1>
+<h1 mat-dialog-tittle>{{ personas !=null ? 'Editar Persona' : 'Ingresar Nueva Persona'}}</h1>
 <div mat-dialog-content>
     <mat-form-field>  
         <div>
@@ -47,11 +47,45 @@
           <!-- {{fechaIngreso}} -->  
         </div>
     </mat-form-field>
+    <mat-form-field>
+        <div>
+            <mat-label>lugarNacimiento</mat-label>
+            <input matInput [(ngModel)]="lugarNacimiento" type="text">
+           
+            <br>
+          
+          <!-- {{fechaIngreso}} -->  
+        </div>
+    </mat-form-field>
+    <mat-form-field>
+        <div>
+            <mat-label>edad</mat-label>
+            <input matInput [(ngModel)]="edad" type="number">
+           
+            <br>
+          
+          <!-- {{fechaIngreso}} -->  
+        </div>
+    </mat-form-field>
+    <mat-form-field>
+        <div>
+            <mat-label>Hobbies</mat-label>
+            <input matInput [(ngModel)]="hobbies" type="text">
+           
+            <br>
+          
+          <!-- {{fechaIngreso}} -->  
+        </div>
+    </mat-form-field>
 
 </div>
 
 <div mat-dialog-actions>
     <button mat-raised-button color="warn" (click)="close()">Cancelar</button>
-    <button mat-raised-button color="primary" (click)="addPersonas()">Guardar</button>
+    <button mat-raised-button color="primary" 
+    (click)="personas!= null ? editPersonas() :  addPersonas()">Guardar</button>
 
 </div>
+
+
+

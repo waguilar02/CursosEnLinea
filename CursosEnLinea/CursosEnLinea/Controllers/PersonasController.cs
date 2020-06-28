@@ -120,6 +120,7 @@ namespace CursosEnLinea.Controllers
                             oPersonas.LugarNacimiento = oModel.LugarNacimiento;
                             oPersonas.Edad = oModel.Edad;
                             oPersonas.Hobbies = oModel.Hobbies;
+                            oPersonas.Estado = "Activo";
                             db.Personas.Add(oPersonas); /*agregamos el objeto oAlumnos a la Base de datos*/
                             db.SaveChanges(); /*Guardamos los cambios realizados*/
                             oRespuesta.Mensaje = "Registro ingresado correctamente";
@@ -166,7 +167,7 @@ namespace CursosEnLinea.Controllers
                     // var lst = db.Personas.ToList(); //
                     // lst = null;
 
-
+                    oRespuesta.Exito = 1;
 
                     switch (oModel.tiposolicitud)
                     {
@@ -197,15 +198,15 @@ namespace CursosEnLinea.Controllers
 
                             Personas oPersonas2 = db.Personas.Find(oModel.NumeroIdentificacion);
 
-                            oPersonas2.NumeroIdentificacion = oModel.NumeroIdentificacion;
-                            oPersonas2.Rol = oModel.Rol;
+                          //  oPersonas2.NumeroIdentificacion = oModel.NumeroIdentificacion;
+                          //  oPersonas2.Rol = oModel.Rol;
 
-                            oPersonas2.Nombres = oModel.Nombres;
-                            oPersonas2.Apellidos = oModel.Apellidos;
-                            oPersonas2.Genero = oModel.Genero;
-                            oPersonas2.LugarNacimiento = oModel.LugarNacimiento;
-                            oPersonas2.Edad = oModel.Edad;
-                            oPersonas2.Hobbies = oModel.Hobbies;
+                            //oPersonas2.Nombres = oModel.Nombres;
+                            //oPersonas2.Apellidos = oModel.Apellidos;
+                            //oPersonas2.Genero = oModel.Genero;
+                           // oPersonas2.LugarNacimiento = oModel.LugarNacimiento;
+                         ///   oPersonas2.Edad = oModel.Edad;
+                          ///  oPersonas2.Hobbies = oModel.Hobbies;
                             oPersonas2.Estado = "Borrado";//oModel.Estado;
                             db.Entry(oPersonas2).State = Microsoft.EntityFrameworkCore.EntityState.Modified; /*agregamos el objeto oAlumnos a la Base de datos*/
                             db.SaveChanges(); /*Guardamos los cambios realizados*/
@@ -214,11 +215,12 @@ namespace CursosEnLinea.Controllers
                             break;
                         default:
                             oRespuesta.Mensaje = "tiposolicitud Inválido";
+                            oRespuesta.Exito = 0;
                             break;
 
                     }
 
-                    oRespuesta.Exito = 1;
+                   
                     //  oRespuesta.Data = lst;
                 }
             }

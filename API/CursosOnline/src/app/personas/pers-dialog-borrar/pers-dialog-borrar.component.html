@@ -1,5 +1,5 @@
-<p>pers-dialog-borrar works!</p>
-<h1 mat-dialog-tittle>Ingresar Nuevo Alumno</h1>
+
+<h1 mat-dialog-tittle>Borrar</h1>
 <h3>¿Está seguro de eliminar?</h3>
 <div mat-dialog-content>
 
@@ -7,6 +7,6 @@
 
 <div mat-dialog-actions>
     <button mat-raised-button cdkFocusInitial [mat-dialog-close]="false">Cancelar</button>
-    <button mat-raised-button [mat-dialog-close]="true">Borrar</button>
+    <button mat-raised-button [mat-dialog-close]="true" (click) = "borrarPersonas()" color="warn" >Borrar</button>
 
 </div>

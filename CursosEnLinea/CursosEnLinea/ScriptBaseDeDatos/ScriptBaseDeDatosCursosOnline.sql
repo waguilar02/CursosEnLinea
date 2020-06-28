@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [CursosOnline]    Script Date: 26/06/2020 0:56:16 ******/
+/****** Object:  Database [CursosOnline]    Script Date: 27/06/2020 23:38:36 ******/
 CREATE DATABASE [CursosOnline]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [CursosOnline] SET QUERY_STORE = OFF
 GO
 USE [CursosOnline]
 GO
-/****** Object:  Table [dbo].[Categorias]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Categorias]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,7 +94,7 @@ CREATE TABLE [dbo].[Categorias](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cursos]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Cursos]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -114,7 +114,7 @@ CREATE TABLE [dbo].[Cursos](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Genero]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Genero]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -128,7 +128,7 @@ CREATE TABLE [dbo].[Genero](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Linea_Carrera]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Linea_Carrera]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -142,7 +142,7 @@ CREATE TABLE [dbo].[Linea_Carrera](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Modalidades]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Modalidades]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +156,7 @@ CREATE TABLE [dbo].[Modalidades](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Personas]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Personas]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -177,7 +177,7 @@ CREATE TABLE [dbo].[Personas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Personas_Cursos]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Personas_Cursos]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -187,7 +187,7 @@ CREATE TABLE [dbo].[Personas_Cursos](
 	[Id_Curso] [int] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -201,7 +201,7 @@ CREATE TABLE [dbo].[Roles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tipos_De_Curso]    Script Date: 26/06/2020 0:56:17 ******/
+/****** Object:  Table [dbo].[Tipos_De_Curso]    Script Date: 27/06/2020 23:38:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -269,15 +269,23 @@ INSERT [dbo].[Modalidades] ([Id_Modalidad], [Descripcion]) VALUES (3, N'Mixto')
 GO
 SET IDENTITY_INSERT [dbo].[Modalidades] OFF
 GO
+INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (457638, NULL, N'Juan', N'Arizola', 2, N'Manizales', 45, N'Trapear', N'Activo')
+GO
+INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (2345678, NULL, N'Vicentes', N'Hernandez', 1, NULL, NULL, N'Lavar losa', N'Borrado')
+GO
 INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (9345875, 2, N'Camilin', N'García', 1, N'Tunja-Boyacá', 31, N'Barrer', NULL)
 GO
 INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (9345876, 2, N'kamilin', N'García', 1, N'Tunja-Boyacá', 31, N'Barrer', NULL)
+GO
+INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (66638475, NULL, N'Jose Nelson', N'Zapata', 1, N'Cartagena', 34, N'Cocinar pollo', NULL)
+GO
+INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (123456789, NULL, N'prima', N'roca', 1, N'Medellin', 25, N'Lavar losa', NULL)
 GO
 INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (1025507931, 1, N'Pepe', N'Rojas', 1, N'Rolo', 25, N'Planchar', NULL)
 GO
 INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (1025888731, 2, N'Maria', N'Pajón', 2, N'Medellín-Antioquia', 21, N'Montar Bicicleta', NULL)
 GO
-INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (1234598663, NULL, N'TestAngularName', N'TestAngularLastName', 1, NULL, NULL, NULL, NULL)
+INSERT [dbo].[Personas] ([Numero_Identificacion], [Rol], [Nombres], [Apellidos], [Genero], [LugarNacimiento], [Edad], [Hobbies], [Estado]) VALUES (1234598663, NULL, N'TestAngularName', N'TestAngularLastName', 1, NULL, NULL, N'Hacer Ejercicio', NULL)
 GO
 INSERT [dbo].[Personas_Cursos] ([Id_Persona], [Id_Curso]) VALUES (1025507931, 1)
 GO
@@ -345,7 +353,22 @@ REFERENCES [dbo].[Personas] ([Numero_Identificacion])
 GO
 ALTER TABLE [dbo].[Personas_Cursos] CHECK CONSTRAINT [FK_Personas_Cursos_Personas]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_RANGO_PERSONAS_POR_EDAD]    Script Date: 26/06/2020 0:56:18 ******/
+/****** Object:  StoredProcedure [dbo].[SP_K_MEANS]    Script Date: 27/06/2020 23:38:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_K_MEANS] 
+
+AS BEGIN
+
+SELECT Hobbies,Edad from Personas ORDER BY Personas.Edad
+	
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[SP_RANGO_PERSONAS_POR_EDAD]    Script Date: 27/06/2020 23:38:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -387,7 +410,7 @@ AS BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_RANGO_PERSONAS_POR_GENERO]    Script Date: 26/06/2020 0:56:18 ******/
+/****** Object:  StoredProcedure [dbo].[SP_RANGO_PERSONAS_POR_GENERO]    Script Date: 27/06/2020 23:38:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

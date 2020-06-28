@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { PersonasDialogComponent } from './personas/personas-dialog/personas-dialog.component';
 import { PersDialogBorrarComponent } from './personas/pers-dialog-borrar/pers-dialog-borrar.component';
+import { ConsultasSPComponent } from './home/consultas-sp/consultas-sp.component';
 
 
 
@@ -35,7 +36,8 @@ import { PersDialogBorrarComponent } from './personas/pers-dialog-borrar/pers-di
     PersonasComponent,
     CursosComponent,
     PersonasDialogComponent,
-    PersDialogBorrarComponent
+    PersDialogBorrarComponent,
+    ConsultasSPComponent
   ],
   imports: [
     BrowserModule,
